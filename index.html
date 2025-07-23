@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Umzugsangebot in Maximal 5 Schritten</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/css/style1.css">
+</head>
+<body class="bg-[#FAFAFA]">
+  <main style="justify-content: space-around" class="container lg:px-[200px] mx-auto flex">
+    <div class="basis-3/4" id="content" style="padding: 36px 50px 20px 0px;">
+      <!-- Content will be loaded here -->
+    </div>
+    <aside class="text-center Progress bg-[#002945] text-white basis-2/5"
+    style='height: max-content; order: 2; display: block; position: relative; width: 320px; padding: 36px 30px 20px; z-index: 5;'>
+      <h2 style="font-size:1.75rem" class="text-red-500">
+        SO WEIT IST
+      </h2>
+      <h2 style="font-size:1.75rem">
+        MEIN UMZUG!
+      </h2>
+      <dotlottie-player src="https://lottie.host/34ceb9b1-896b-4cbc-8284-5505dec129ba/VfSzepQttL.json"
+      background="transparent" speed="1" loop autoplay>
+      </dotlottie-player>
+      <svg style="display: none" width="200" height="200">
+        <circle cx="100" cy="100" r="90" class="circle-bg" />
+        <circle cx="100" cy="100" r="90" class="circle" style="stroke-dasharray: 0, 100;">
+        </circle>
+      </svg>
+
+      <h1 class="text-center text-red-500 text-xl font-bold mb-4">Schnellberechnung</h1>
+        <p class="text-center mb-6">Die Strecke ist ausgehend von unserem Standort</p>
+        <div class="space-y-2">
+            <div class="flex justify-between border-b border-red-500 pb-1">
+                <span>Strecke</span>
+                <span>961 km</span>
+            </div>
+            <div class="flex justify-between border-b border-red-500 pb-1">
+                <span>Umzugsvolumen</span>
+                <span>3,00 m³</span>
+            </div>
+            <div class="flex justify-between border-b border-red-500 pb-1">
+                <span>Umzug</span>
+                <span>2.324,88 €</span>
+            </div>
+            <div class="flex justify-between border-b border-red-500 pb-1">
+                <span>Leistungen</span>
+                <span>29,25 €</span>
+            </div>
+            <div class="flex justify-between border-b border-red-500 pb-1">
+                <span>Material</span>
+                <span>15,30 €</span>
+            </div>
+        </div>
+        <div class="mt-4">
+            <div class="flex justify-between text-red-400">
+                <span>Nettosumme</span>
+                <span>2.369,43 €</span>
+            </div>
+            <div class="flex justify-between text-red-400">
+                <span>MwSt.</span>
+                <span>450,19 €</span>
+            </div>
+            <div class="flex justify-between border-t border-red-500 pt-1 text-lg font-bold">
+                <span>Preis inkl. MwSt.</span>
+                <span>2.819,62 €</span>
+            </div>
+        </div>
+
+        <div class="AsideBtns">
+          <a class="yesButtunGreen w-full bg-green-500" href="#" id="openCustomModal">
+            <i class="las la-handshake mr-2"></i> DIREKT BUCHEN
+          </a>
+          <a class="MessageUsBtn" id="openModal" href="#">
+            <i class="las la-envelope text-xl m-2"></i> Anfrage Senden
+          </a>
+          <a class="NextStepBtn greenButtonActive" id="changeContentBtn" href="#">
+            <i class="las la-arrow-right text-xl m-2"></i> Weiter
+          </a>
+        </div>
+
+
+        <div id="customModal" class="fixed inset-0 hidden bg-black bg-opacity-50 flex items-center justify-center">  
+          <div class="bg-slate-100 p-6 rounded-lg shadow-lg max-w-5xl w-full" style="transform: scaleX(0.60) scaleY(0.60);">  
+              <h2 class="text-xl bg-slate-300 font-bold mb-4 text-black">Umzug buchen</h2>  
+              <div class=" mb-4 grid grid-cols-2 gap-4">  
+                  <div>  
+                      <label class="bg-white-300 block mb-2 text-black">Anrede</label>  
+                      <select class="bg-white text-black w-full border border-gray-300 p-2 rounded">  
+                          <option>Bitte wählen</option>  
+                          <option>Frau</option>  
+                          <option>Herr</option>  
+                          <option>Familie</option>  
+                          <option>Firma</option>  
+                          <option>Amt</option>  
+                          <option>Eheleute</option>  
+                          <option>Parixis</option>  
+                      </select>  
+                  </div>  
+                  <div>  
+                      <label class="block mb-2 text-black">Vorname*</label>  
+                      <input type="text" class="text-black w-full border border-gray-300 p-2 rounded" required>  
+                  </div>  
+                  <div>  
+                      <label class="block mb-2 text-black">Name*</label>  
+                      <input type="text" class="text-black w-full border border-gray-300 p-2 rounded" required>  
+                  </div>  
+                  <div>  
+                      <label class="block mb-2 text-black">E-Mail*</label>  
+                      <input type="email" class="text-black w-full border border-gray-300 p-2 rounded" required>  
+                  </div>  
+                  <div>  
+                      <label class="block mb-2 text-black">Telefon*</label>  
+                      <input type="text" class="text-black w-full border border-gray-300 p-2 rounded" required>  
+                  </div>  
+              </div>  
+              <div class="p-8">
+                <p class="bg-slate-300 text-sm mb-4 p-8 text-black">  
+                  Hiermit beauftrage ich verbindlich die Durchführung meines Umzuges.  
+                  Der Leistungsumfang beruht auf den von mir gemachten Angaben. Weitere als die vereinbarten Leistungen oder  
+                  Materialien sind nicht Bestandteil des Auftrages. Ich bestätige die Vollständigkeit und Richtigkeit der Abtragewege,  
+                  Anschriften und Stockwerke. Umräumarbeiten und weitere Handwerkerleistungen falls notwendig per Nachauftrag  
+                  extra und nach Aufwand berechnet. Die An & Abfahrt unseres Personals ist in den Ladezeiten enthalten.  
+                  <strong>Termine sind erst nach Bestätigung durch unsere Disposition verbindlich.</strong>  
+                </p>  
+              </div>
+
+                <!-- New section added here -->
+              <div class="bg-while flex items-center mb-4">
+                  <label class="block mb-2 text-black mr-4">Datei hinzufügen</label>
+                  <input type="file" class="text-black border border-gray-300 p-2 rounded mr-4">
+                  <p class="text-sm p-2 text-black mr-4">Ich habe gelesen und stimme zu</p>
+                  <button type="button" class="bg-green-500 text-white rounded px-4 py-2" onclick="toggleColor(this)">
+                    <i class="fas fa-check"></i>
+                  </button>
+              </div>
+
+              <div class="bg-while flex items-center mb-4">
+                  <label class="block mb-2 text-black mr-4">Datei hinzufügen</label>
+                  <input type="file" class="text-black border border-gray-300 p-2 rounded mr-4">
+                  <p class="text-sm p-2 text-black mr-4">Ich habe gelesen und stimme zu</p>
+                  <button type="button" class="bg-green-500 text-white rounded px-4 py-2" onclick="toggleColor(this)">
+                    <i class="fas fa-check"></i>
+                  </button>
+              </div>
+
+              <script>
+                function toggleColor(button) {
+                    if (button.style.backgroundColor === 'red') {
+                        button.style.backgroundColor = 'green';
+                    } else {
+                        button.style.backgroundColor = 'red';
+                    }
+                }
+                </script>
+
+
+              <div class="flex justify-between">  
+                  <button type="submit" class="bg-green-500 text-white rounded px-4 py-2">Direkt buchen</button>  
+                  <button type="button" id="closeCustomModal" class="bg-red-500 text-white rounded px-4 py-2">Abbrechen</button>  
+              </div>  
+          </div>  
+      </div>  
+  
+
+
+      <script>
+        const openCustomModal = document.getElementById('openCustomModal');  
+            const closeCustomModal = document.getElementById('closeCustomModal');  
+            const customModal = document.getElementById('customModal');  
+
+            openCustomModal.addEventListener('click', function(event) {  
+                event.preventDefault();  
+                customModal.classList.remove('hidden');  
+            });  
+
+            closeCustomModal.addEventListener('click', function() {  
+                customModal.classList.add('hidden');  
+            });  
+      </script>
+
+
+        <div id="contactModal" class="modal">
+          <div class="modal-content">
+            <span class="close" id="closeModal">
+              &times;
+            </span>
+            <h2 class="text-xl font-bold mb-4 text-red-600">
+              Kontaktformular
+            </h2>
+            <form>
+              <div class="mb-4">
+                <label for="name" class="block text-sm font-medium text-gray-700">
+                  Name
+                </label>
+                <input id="name" class="block w-full border border-gray-300 rounded-md p-2 focus:border-red-500 focus:ring focus:ring-red-500 focus:ring-opacity-50">
+              </div>
+              <div class="mb-4">
+                <label for="surname" class="block text-sm font-medium text-gray-700">
+                  Nachname
+                </label>
+                <input id="surname" class="block w-full border border-gray-300 rounded-md p-2 focus:border-red-500 focus:ring focus:ring-red-500 focus:ring-opacity-50">
+              </div>
+              <div class="mb-4">
+                <label for="email" class="block text-sm font-medium text-gray-700">
+                  E-Mail
+                </label>
+                <input type="email" id="email" class="block w-full border border-gray-300 rounded-md p-2 focus:border-red-500 focus:ring focus:ring-red-500 focus:ring-opacity-50"
+                placeholder="z.B. beispiel@domain.de" required>
+              </div>
+              <div class="mb-4">
+                <label for="phone" class="block text-sm font-medium text-gray-700">
+                  Telefonnummer
+                </label>
+                <input type="tel" id="phone" class="block w-full border border-gray-300 rounded-md p-2 focus:border-red-500 focus:ring focus:ring-red-500 focus:ring-opacity-50"
+                placeholder="z.B. +49 123 4567890" required>
+              </div>
+              <button type="submit" class="w-full bg-red-600 text-white py-2 rounded-md hover:bg-red-700 transition duration-300">
+                Absenden
+              </button>
+            </form>
+          </div>
+        </div>
+
+    </aside>
+  </main>
+
+
+
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+    <script src="assets/javascript/script1.js"></script>
+</body>
+</html>

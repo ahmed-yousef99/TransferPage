@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<style>
+    .vertical-text {
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  text-align: center;
+}
+.day {
+    margin: 5px 0 0 0;
+    text-align: center;
+    cursor: pointer;
+}
+.selectedData {
+    background-color: rgb(200 10 10);
+}
+</style>
+<body>
+
+    
+<h1 class="text-red-600 text-2xl font-bold mb-4">ZUSAMMENFASSUNG UND BUCHUNG</h1>
+
+<div class="bg-white shadow-md rounded-lg p-4 mb-4">
+    <div class="bg-gray-800 text-white p-2 flex justify-between items-center rounded-t-lg max-w-full">
+      <h2 class="text-lg">Mein Umzugspreis</h2>
+      <i class="fas fa-question-circle"></i>
+    </div>
+    <div class="p-4">
+      <p>Für <span class="font-bold">Dienstag, 17. September 2024</span> steht Ihnen ein Angebot von <span class="text-red-600 font-bold">244,90 €</span> zur Verfügung.</p>
+        <div style="width: 600px;margin: 20px 0 0 0;">
+            <div class="flex overflow-x-auto">
+                <div class="text-center mx-1">
+                  <p class="p-1 vertical-text">September 2024</p>
+                </div>
+                <div class="text-center mx-1">
+                  <p class="bg-red-600 text-white p-1 vertical-text">0,00 € &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    <div class="day" onclick="changeColorNmNu(this)">
+                    <p>Do</p>
+                    <p>5</p>    
+                  </div>
+                </div>
+                <div class="text-center mx-1">
+                  <p class="bg-red-600 text-white p-1 vertical-text">0,00 € &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                  <div class="day" onclick="changeColorNmNu(this)">
+                    <p>Fr</p>
+                    <p>6</p>
+                  </div>                
+                </div>
+                <div class="text-center mx-1">
+                  <p class="bg-red-600 text-white p-1 vertical-text">0,00 € &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                  <div class="day" onclick="changeColorNmNu(this)">
+                    <p>Sa</p>
+                    <p>7</p>
+                  </div>                
+                </div>
+                <div class="bg-gray-100 text-center mx-1 opacity-50">
+                  <p class="bg-gray-100 opacity-50 text-white p-1 vertical-text">0,00 € &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                  <div class="day" class="bg-gray-100 opacity-50">
+                    <p>So</p>
+                    <p>8</p>
+                  </div>
+                </div>
+                <div class="text-center mx-1">
+                  <p class="bg-red-600 text-white p-1 vertical-text">0,00 € &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                  <div class="day"  onclick="changeColorNmNu(this)">
+                    <p>Mo</p>
+                    <p>9</p>
+                  </div>                
+                </div>
+                <div class="text-center mx-1">
+                  <p class="bg-red-600 text-white p-1 vertical-text">0,00 € &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                  <div class="day" onclick="changeColorNmNu(this)" >
+                    <p>Di</p>
+                    <p>10</p>                  
+                  </div>
+                </div>
+                <div class="text-center mx-1">
+                  <p class="bg-red-600 text-white p-1 vertical-text">0,00 € &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                  <div class="day"  onclick="changeColorNmNu(this)">
+                    <p>Mi</p>
+                    <p>11</p>                  
+                  </div>
+                </div>
+                <div class="text-center mx-1">
+                  <p class="bg-red-600 text-white p-1 vertical-text">0,00 € &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    <div class="day" onclick="changeColorNmNu(this)">
+                    <p>Do</p>
+                    <p>5</p>    
+                  </div>
+                </div>
+                <div class="text-center mx-1">
+                  <p class="bg-red-600 text-white p-1 vertical-text">0,00 € &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                  <div class="day" onclick="changeColorNmNu(this)">
+                    <p>Fr</p>
+                    <p>6</p>
+                  </div>                
+                </div>
+                <div class="text-center mx-1">
+                  <p class="bg-red-600 text-white p-1 vertical-text">0,00 € &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                  <div class="day" onclick="changeColorNmNu(this)">
+                    <p>Sa</p>
+                    <p>7</p>
+                  </div>                
+                </div>
+                <div class="bg-gray-100 text-center mx-1 opacity-50">
+                  <p class="bg-gray-100 opacity-50 text-white p-1 vertical-text">0,00 € &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                  <div class="day" class="bg-gray-100 opacity-50">
+                    <p>So</p>
+                    <p>8</p>
+                  </div>
+                </div>
+                <div class="text-center mx-1">
+                  <p class="bg-red-600 text-white p-1 vertical-text">0,00 € &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                  <div class="day"  onclick="changeColorNmNu(this)">
+                    <p>Mo</p>
+                    <p>9</p>
+                  </div>                
+                </div>
+                <div class="text-center mx-1">
+                  <p class="bg-red-600 text-white p-1 vertical-text">0,00 € &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                  <div class="day" onclick="changeColorNmNu(this)" >
+                    <p>Di</p>
+                    <p>10</p>                  
+                  </div>
+                </div>
+                <div class="text-center mx-1">
+                  <p class="bg-red-600 text-white p-1 vertical-text">0,00 € &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                  <div class="day"  onclick="changeColorNmNu(this)">
+                    <p>Mi</p>
+                    <p>11</p>                  
+                  </div>
+                </div>
+                <div class="text-center mx-1">
+                  <p class="bg-red-600 text-white p-1 vertical-text">0,00 € &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                    <div class="day" onclick="changeColorNmNu(this)">
+                    <p>Do</p>
+                    <p>5</p>    
+                  </div>
+                </div>
+                <div class="text-center mx-1">
+                  <p class="bg-red-600 text-white p-1 vertical-text">0,00 € &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                  <div class="day" onclick="changeColorNmNu(this)">
+                    <p>Fr</p>
+                    <p>6</p>
+                  </div>                
+                </div>
+                <div class="text-center mx-1">
+                  <p class="bg-red-600 text-white p-1 vertical-text">0,00 € &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                  <div class="day" onclick="changeColorNmNu(this)">
+                    <p>Sa</p>
+                    <p>7</p>
+                  </div>                
+                </div>
+                <div class="bg-gray-100 text-center mx-1 opacity-50">
+                  <p class="bg-gray-100 opacity-50 text-white p-1 vertical-text">0,00 € &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                  <div class="day" class="bg-gray-100 opacity-50">
+                    <p>So</p>
+                    <p>8</p>
+                  </div>
+                </div>
+                <div class="text-center mx-1">
+                  <p class="bg-red-600 text-white p-1 vertical-text">0,00 € &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                  <div class="day"  onclick="changeColorNmNu(this)">
+                    <p>Mo</p>
+                    <p>9</p>
+                  </div>                
+                </div>
+                <div class="text-center mx-1">
+                  <p class="bg-red-600 text-white p-1 vertical-text">0,00 € &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                  <div class="day" onclick="changeColorNmNu(this)" >
+                    <p>Di</p>
+                    <p>10</p>                  
+                  </div>
+                </div>
+                <div class="text-center mx-1">
+                  <p class="bg-red-600 text-white p-1 vertical-text">0,00 € &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                  <div class="day"  onclick="changeColorNmNu(this)">
+                    <p>Mi</p>
+                    <p>11</p>                  
+                  </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+
+
+    <div class="bg-white shadow-md rounded-lg p-4 mb-4">
+        <div class="bg-gray-800 text-white p-2 flex justify-between items-center rounded-t-lg">
+            <h2 class="text-lg">Persönliche Angaben</h2>
+        </div>
+        <form class="p-4 grid grid-cols-2 gap-4">
+            <div>
+                <label>Anrede*</label>
+                <select class="w-full border border-gray-300 p-2">
+                    <option>Bitte wählen</option>
+                    <option>Frau</option>  
+                    <option>Herr</option>  
+                    <option>Familie</option>  
+                    <option>Firma</option>  
+                    <option>Amt</option>  
+                    <option>Eheleute</option>  
+                    <option>Parixis</option>  
+                  </select>
+                </select>
+            </div>
+            <div>
+                <label>Vorname*</label>
+                <input type="text" class="w-full border border-gray-300 p-2">
+            </div>
+            <div>
+                <label>Name*</label>
+                <input type="text" class="w-full border border-gray-300 p-2">
+            </div>
+            <div>
+                <label>E-Mail*</label>
+                <input type="email" class="w-full border border-gray-300 p-2">
+            </div>
+            <div>
+                <label>Telefon*</label>
+                <input type="tel" class="w-full border border-gray-300 p-2">
+            </div>
+            <div>
+                <label>Separate Rechnungsadresse</label>
+                <input type="text" class="w-full border border-gray-300 p-2">
+            </div>
+        </form>
+    </div>
+
+    <div class="bg-white shadow-md rounded-lg p-4">
+        <div class="bg-gray-800 text-white p-2 flex justify-between items-center rounded-t-lg">
+            <h2 class="text-lg">Meine Angaben zum Umzug</h2>
+            <i class="fas fa-question-circle"></i>
+        </div>
+        <div class="p-4 grid grid-cols-2 gap-4">
+            <div class="border border-gray-300 p-2">
+                <h3 class="font-bold">Alte Adresse</h3>
+                <p>(DE)</p>
+                <p>Erdgeschoss</p>
+                <p>kein Aufzug</p>
+                <p>Strecke zum LKW 5 m</p>
+                <p>ohne Stufen</p>
+                <p>Parkplatz für LKW</p>
+            </div>
+            <div class="border border-gray-300 p-2">
+                <h3 class="font-bold">Neue Adresse</h3>
+                <p>(DE)</p>
+                <p>Erdgeschoss</p>
+                <p>kein Aufzug</p>
+                <p>Strecke zum LKW 5 m</p>
+                <p>ohne Stufen</p>
+                <p>Parkplatz für LKW</p>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umzugsliste</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-gray-100">
+
+  <div class="bg-gray-800 text-white flex justify-between items-center p-4">
+    <div class="text-lg font-bold">📋 Umzugsliste</div>
+    <div class="text-2xl tooltip">
+        <div class="circle">
+            <i class="fa-solid fa-question text-white"></i>
+        </div>
+        <span class="tooltiptext">Hier finden Sie Ihre Umzugsliste und können Räume hinzufügen und Möbelstücke suchen.</span>
+    </div>
+</div>
+<!-- Main Content -->
+<div class="flex-container" id="itemList">
+  <div class="item" data-id="item1" onclick="selectItem(this, 'Eingang')">
+    <span class="count">0</span><i class="fa-solid fa-house"></i> Eingang
+    <span class="remove-btn" onclick="showDeleteModal(this)"><i class="fa-solid fa-xmark"></i></span>
+  </div>
+  <div class="item" data-id="item1" onclick="selectItem(this, 'Eingang')">
+    <span class="count">0</span><i class="fa-solid fa-kitchen-set"></i> Küche
+    <span class="remove-btn" onclick="showDeleteModal(this)"><i class="fa-solid fa-xmark"></i></span>
+  </div>
+  <div class="item" data-id="item1" onclick="selectItem(this, 'Eingang')">
+    <span class="count">0</span><i class="fa-solid fa-person-booth"></i> Wohnzimmer
+    <span class="remove-btn" onclick="showDeleteModal(this)"><i class="fa-solid fa-xmark"></i></span>
+  </div>
+  <!-- Other items... -->
+  <button class="bg-gray-800 text-white px-4 py-2 rounded" onclick="showAddModal()">+ Raum hinzufügen</button>
+</div>
+
+<!-- Add Room Modal -->
+<div id="addRoomModal" class="modal-home fixed z-10 inset-0 overflow-y-auto hidden">
+  <div class="flex items-center justify-center min-h-screen">
+    <div class="bg-white rounded-lg p-4 w-2/6 max-h-2/6 overflow-y-auto">
+      <span class="close-home text-gray-500 float-right text-2xl cursor-pointer" onclick="closeAddModal()">&times;</span>
+      <h2 class="text-center text-xl font-bold mb-4">Raum hinzufügen</h2>
+      
+      <!-- Container with scroll -->
+      <div class="flex flex-col max-h-40 overflow-y-auto">
+        <div class="flex justify-between items-center px-4 py-2 border-b">
+          <span>Schlafzimmer</span>
+          <button class="bg-gray-800 text-white px-4 py-2 rounded" onclick="addItem('Schlafzimmer', 'fa-bed')">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+        <div class="flex justify-between items-center px-4 py-2 border-b">
+          <span>Bad</span>
+          <button class="bg-gray-800 text-white px-4 py-2 rounded" onclick="addItem('Bad', 'fa-couch')">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+        <div class="flex justify-between items-center px-4 py-2 border-b">
+          <span>Bad 2</span>
+          <button class="bg-gray-800 text-white px-4 py-2 rounded" onclick="addItem('Bad2', 'fa-couch')">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+        <div class="flex justify-between items-center px-4 py-2 border-b">
+          <span>Balkon</span>
+          <button class="bg-gray-800 text-white px-4 py-2 rounded" onclick="addItem('Balkon', 'fa-box')">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+        <div class="flex justify-between items-center px-4 py-2 border-b">
+          <span>Büro</span>
+          <button class="bg-gray-800 text-white px-4 py-2 rounded" onclick="addItem('Büro', 'fa-box')">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+        <div class="flex justify-between items-center px-4 py-2 border-b">
+          <span>Dachboden</span>
+          <button class="bg-gray-800 text-white px-4 py-2 rounded" onclick="addItem('Dachboden', 'fa-box')">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+        <div class="flex justify-between items-center px-4 py-2 border-b">
+          <span>Eingang</span>
+          <button class="bg-gray-800 text-white px-4 py-2 rounded" onclick="addItem('Eingang', 'fa-box')">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+        <div class="flex justify-between items-center px-4 py-2 border-b">
+          <span>Esszimmer</span>
+          <button class="bg-gray-800 text-white px-4 py-2 rounded" onclick="addItem('Esszimmer', 'fa-box')">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+        <div class="flex justify-between items-center px-4 py-2 border-b">
+          <span>Flur</span>
+          <button class="bg-gray-800 text-white px-4 py-2 rounded" onclick="addItem('Flur', 'fa-box')">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+        <div class="flex justify-between items-center px-4 py-2 border-b">
+          <span>Garage</span>
+          <button class="bg-gray-800 text-white px-4 py-2 rounded" onclick="addItem('Garage', 'fa-box')">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+        <div class="flex justify-between items-center px-4 py-2 border-b">
+          <span>Gästezimmer</span>
+          <button class="bg-gray-800 text-white px-4 py-2 rounded" onclick="addItem('Gästezimmer', 'fa-box')">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+        <div class="flex justify-between items-center px-4 py-2 border-b">
+          <span>Keller</span>
+          <button class="bg-gray-800 text-white px-4 py-2 rounded" onclick="addItem('Keller', 'fa-box')">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+        <div class="flex justify-between items-center px-4 py-2 border-b">
+          <span>Kinderzimmer</span>
+          <button class="bg-gray-800 text-white px-4 py-2 rounded" onclick="addItem('Kinderzimmer', 'fa-box')">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+        <div class="flex justify-between items-center px-4 py-2 border-b">
+          <span>Schlafzimmer</span>
+          <button class="bg-gray-800 text-white px-4 py-2 rounded" onclick="addItem('Schlafzimmer', 'fa-box')">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+        <div class="flex justify-between items-center px-4 py-2 border-b">
+          <span>Garage</span>
+          <button class="bg-gray-800 text-white px-4 py-2 rounded" onclick="addItem('Garage', 'fa-box')">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+        <div class="flex justify-between items-center px-4 py-2 border-b">
+          <span>Speicher</span>
+          <button class="bg-gray-800 text-white px-4 py-2 rounded" onclick="addItem('Speicher', 'fa-box')">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+        <div class="flex justify-between items-center px-4 py-2 border-b">
+          <span>Wohnzimmer</span>
+          <button class="bg-gray-800 text-white px-4 py-2 rounded" onclick="addItem('Wohnzimmer', 'fa-box')">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Input field and add button -->
+      <div class="flex justify-between items-center px-4 py-2 mt-4">
+        <input id="customRoomInput" type="text" class="border rounded px-2 py-1 w-3/4" placeholder="Raumname eingeben">
+        <button class="bg-blue-600 text-white px-4 py-2 rounded" onclick="addCustomRoom()">
+          Hinzufügen
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div id="deleteConfirmationModal" class="unique-modal-background">
+  <div class="unique-modal-content">
+    <span class="unique-close-button" onclick="closeDeleteModal()">&times;</span>
+    <h2 class="unique-modal-title">Sind Sie sicher, dass Sie dieses Element löschen möchten؟</h2>
+    <div class="unique-button-container">
+      <button class="unique-cancel-button" onclick="closeDeleteModal()">Abbrechen</button>
+      <button class="unique-delete-button" onclick=" deleteItem()">Löschen</button>
+    </div>
+  </div>
+</div>
+
+<div class="flex justify-center items-center p-4 bg-white">
+  <input type="text" placeholder="Möbelstück suchen" class="w-3/4 p-2 border rounded mr-2">
+  <button class="bg-gray-800 text-white px-4 py-2 rounded">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+</div>
+
+<div id="items-container-new" class="p-4">
+  <div class="flex justify-between items-center p-4 bg-white rounded mb-2 shadow" id="original-item-new">
+    <div><i class="fas fa-camera"></i> Kinderwagen</div>
+    <div class="flex items-center">
+      <button class="border px-2 decrease-btn-new" onclick="changeQuantityNew(this, -1)">-</button>
+      <input type="text" value="0" class="w-10 text-center border mx-2 quantity-input-new">
+      <button class="border px-2 increase-btn-new" onclick="changeQuantityNew(this, 1)">+</button>
+      <button class="text-red-500 mx-2"><i class="fas fa-map-marker-alt"></i></button>
+      <button class="text-gray-500 mx-2"><i class="fas fa-home"></i></button>
+      <button class="text-gray-500 mx-2"><i class="fas fa-recycle"></i></button>
+    </div>
+  </div>
+</div>
+
+<div class="text-center p-4">
+  <button class="bg-gray-800 text-white px-4 py-2 rounded" id="add-item-btn-new" onclick="showModalNew()">+ Weiteres Möbelstück suchen</button>
+</div>
+
+<!-- The Modal -->
+<div id="myModalNew" class="fixed z-10 inset-0 overflow-y-auto hidden">
+  <div class="flex items-center justify-center min-h-screen">
+    <div class="bg-white rounded-lg p-4 w-2/6 max-h-2/6 overflow-y-auto">
+      <span class="close-new text-gray-500 float-right text-2xl cursor-pointer" onclick="closeModalNew()">&times;</span>
+      <h2 class="text-center text-xl mb-4">Wählen Sie ein Möbelstück</h2>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Aktenschrank (groß) Breite: 1-2m / Höhe: 1-3m</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (groß)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Aktenschrank (klein) Breite: 0-1m / Höhe: 0-1m</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Aktenschrank je angef.m</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Anbauwand (breit) Breite: 3-4m / Höhe: 1-3m</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Anbauwand (mittel) Breite: 1-2m / Höhe: 1-3m</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Anbauwand bis 38 cm je angef.m</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Aquarium</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Arbeitsplatte je angef.m</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Autoreifen je Stück</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Backofen</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Bank (groß) 5 Sitzer</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Bank (mittel) 3-4 Sitzer</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Bank nicht zerlegbar</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Bar je m</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Bartisch (groß) 6-8 Personen</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Bartisch (klein) 2-3 Personen</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Bauernschrank zerlegbar je Meter Breite</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Bücherregal (breit) Breite: 3-4m</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Bücherregal (mittel) Breite: 1-2m
+        </span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Bücherregal zerlegb.je angef.m</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Buffet mit Aufsatz</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Bügelbrett</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Bügelmaschine</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Bürostuhl</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>CD-Regal</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Computer/PC</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Computertisch</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Deckenlampe</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Diener / Dinett</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Dreirad, Kinderrad</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Dunstabzugshaube</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Eckbank je Sitz</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Fahrrad</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Fernseher</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Fitnessgerät</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <div class="unique-option-new flex justify-between items-center p-2 border-b">
+        <span>Frisierkommode mit Spiegel</span>
+        <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="addItemNew('Aktenschrank (klein)')">+</button>
+      </div>
+      <!-- Add more options as needed -->
+    </div>
+  </div>
+</div>
+
+
+
+
+
+</body>
+</html>

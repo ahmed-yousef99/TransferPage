@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+  <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  
+
+<div class="bg-white shadow-md rounded-lg p-4 mb-4">
+  <div class="bg-gray-800 text-white p-2 flex justify-between items-center rounded-t-lg">
+      <h2 class="text-lg">Bleibt was stehen?</h2>
+      <i class="fas fa-question-circle"></i>
+  </div>
+  <p class="p-4">Gibt es Möbel, speziell in der Küche oder im Speicher / Keller, die <a class="text-red-600 font-bold">NICHT</a> umgezogen werden sollen und soll der Inhalt dieser Möbel in Umzugskartons umgezogen werden?</p>
+  <div id="itms-cntnr" class="p-4">
+    <div class="flex justify-between items-center p-4 bg-white rounded mb-2 shadow" id="original-item-new">
+      <div>Kinderwagen</div>
+      <div class="flex items-center">
+        <button class="border px-2 decrease-btn-new" onclick="chngQnttyNw(this, -1)">-</button>
+        <input type="text" value="0" class="w-10 text-center border mx-2 qntty-inpt">
+        <button class="border px-2 increase-btn-new" onclick="chngQnttyNw(this, 1)">+</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="text-center p-4">
+    <button class="bg-gray-800 text-white px-4 py-2 rounded" id="add-item-btn-new" onclick="shwMdlNw()">+ Weiteres Möbelstück suchen</button>
+  </div>
+  
+  <!-- The Modal -->
+  <div id="moda-new-my-2" class="fixed z-10 inset-0 overflow-y-auto hidden">
+    <div class="flex items-center justify-center min-h-screen">
+      <div class="bg-white rounded-lg p-4 w-2/6 max-h-2/6 overflow-y-auto">
+        <span class="close-new text-gray-500 float-right text-2xl cursor-pointer" onclick="clsMdlNw()">×</span>
+        <h2 class="text-center text-xl mb-4">Wählen Sie ein Möbelstück</h2>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Aktenschrank je angef.m</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (groß)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Anbauwand bis 38 cm je angef.m</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Anbauwand üb. 38 cm je angef.m</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Arbeitsplatte je angef.m</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Bar je m</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Besenschrank</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Bettumbau (Kopfteil)</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Bücherregal zerlegb.je angef.m</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Buffet mit Aufsatz</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Buffet ohne Aufsatz</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Computertisch
+          </span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Deckenlampe
+          </span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Eckbank je Sitz</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Flurgarderobe, 2-Teilig m. Spiegel</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Frisierkommode mit Spiegel</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Hängeschrank 1m</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Hängeschrank Küche</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Hochschrank Bad</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Hochschrank Küche</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Kommode</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Musikschrank/Turm
+          </span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Nachttisch</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Pflanzen klein</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Regal nicht zerlegbar</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Regal zerlegbar je angef.m</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Schrank bis 2 Türen n. zerlegbar</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Schrank zerlegbar je angef.m</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Schreibpult</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Schreibtisch mit Container</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Schreibtisch über 1,60 m</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Schuhschrank</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Sekretär</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Sideboard groß</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Sideboard klein</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Spüle mit 2 Türen</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Teewagen</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Tisch bis 0,6 m
+          </span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Tisch bis 1,0 m
+          </span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Tisch bis 1,2 m</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Tisch über 1,2 m</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Tischlampe</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Toilettenschrank</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Truhe, Kommode</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <div class="unique-option-new flex justify-between items-center p-2 border-b">
+          <span>Unterschrank</span>
+          <button class="bg-gray-600 text-white px-2 py-1 rounded" onclick="itemNewItem('Aktenschrank (klein)')">+</button>
+        </div>
+        <!-- Add more options as needed -->
+      </div>
+    </div>
+  </div>
+  
+  
+  
+</div>
+
+
+
+<div class="bg-white shadow-md rounded-lg p-4">
+  <div class="bg-gray-800 text-white p-2 flex justify-between items-center rounded-t-lg">
+    <h2 class="text-lg">Einpackarbeiten</h2>
+    <i class="fas fa-question-circle"></i>
+  </div>
+  <div class="p-4">
+    <div class="flex justify-between items-center mb-2">
+      <span>Alle Packarbeiten: Der Inhalt der Möbelstücke wird ein- und ausgepackt</span>
+      <div class="flex items-center">
+        <label class="flex items-center">
+          <input type="checkbox" checked class="form-checkbox text-red-600 mx-2"> Ja
+        </label>
+        <label class="flex items-center">
+          <input type="checkbox" class="form-checkbox text-red-600 mx-2"> Nein
+        </label>
+      </div>
+    </div>
+    <div class="flex justify-between items-center mb-2">
+      <span id="dropdownButton1" class="text-left flex items-center cursor-pointer" onclick="toggleDropdown('dropdownContent1')">
+        <i class="fas fa-chevron-down ml-2"></i>&nbsp;&nbsp;
+        <span class="mr-4">Nur Möbelinhalt umziehen</span>
+      </span>
+      <div class="flex space-x-2">
+        <button class="option bg-gray-300 px-4 py-2 rounded fntsz" onclick="toggleActive(this)">Option</button>
+        <button class="option bg-gray-300 px-4 py-2 rounded fntsz" onclick="toggleActive(this)">Option</button>
+      </div>
+    </div>
+    <div id="dropdownContent1" class="hidden mt-2 flex justify-between items-center">
+      <span class="text-left flex items-center cursor-pointer">
+        &nbsp;&nbsp;
+        <span class="mr-4">Aktenschrank je angef.m 1x</span>
+      </span>
+      <div class="flex space-x-2">
+        <button class="option bg-gray-300 px-4 py-2 rounded fntsz" onclick="toggleActive(this)">Option</button>
+        <button class="option bg-gray-300 px-4 py-2 rounded fntsz" onclick="toggleActive(this)">Option</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+</body>
+</html>

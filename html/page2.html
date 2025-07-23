@@ -1,0 +1,495 @@
+<h1 class="text-3xl font-bold mb-6 text-center bg-gray-500 rounded text-gray-200 p-5">
+  📍 Art des Umzugs
+</h1>
+<!-- Wunschpaket Section -->
+<div class="mb-8">
+  <h2 class="text-xl font-semibold mb-4">
+    Wunschpaket
+  </h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="wunschpaket">
+    <div class="flex items-center p-4 border rounded-lg border-gray-300 bg-white shadow-sm cursor-pointer"
+    onclick="selectWunschpaket(this)">
+      <span class="text-gray-500">
+        🏅
+      </span>
+      <!-- Silver Icon -->
+      <div class="ml-2">
+        <h3 class="font-bold">
+          Economy
+        </h3>
+        <p>
+          Umzug Möbel von A nach B
+        </p>
+        <p class="text-yellow-500">
+          ⭐
+        </p>
+      </div>
+    </div>
+    <div class="flex items-center p-4 border rounded-lg border-gray-300 bg-white shadow-sm cursor-pointer"
+    onclick="selectWunschpaket(this)">
+      <span class="text-yellow-500">
+        🏅
+      </span>
+      <!-- Gold Icon -->
+      <div class="ml-2">
+        <h3 class="font-bold">
+          Standard
+        </h3>
+        <p>
+          Umzug Möbel von A nach B mit Montage und Material
+        </p>
+        <p class="text-yellow-500">
+          ⭐⭐
+        </p>
+      </div>
+    </div>
+    <div class="flex items-center p-4 border rounded-lg border-gray-300 bg-white shadow-sm cursor-pointer"
+    onclick="selectWunschpaket(this)">
+      <span class="text-blue-500">
+        💎
+      </span>
+      <!-- Diamond Icon -->
+      <div class="ml-2">
+        <h3 class="font-bold">
+          Premium
+        </h3>
+        <p>
+          Umzug Möbel von A nach B mit Montage und Material plus ein- und auspacken
+        </p>
+        <p class="text-yellow-500">
+          ⭐⭐⭐
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Personen im Haushalt Section -->
+<div>
+  <h2 class="text-xl font-semibold mb-4">
+    Personen im Haushalt
+  </h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" id="personenHaushalt">
+    <div class="flex items-center p-4 border rounded-lg border-gray-300 bg-white shadow-sm cursor-pointer"
+    onclick="selectPersonen(this)">
+      <span class="text-gray-500">
+        👤
+      </span>
+      <!-- 1 Person Icon -->
+      <div class="ml-2">
+        <h3 class="font-bold">
+          1 Person
+        </h3>
+      </div>
+    </div>
+    <div class="flex items-center p-4 border rounded-lg border-gray-300 bg-white shadow-sm cursor-pointer"
+    onclick="selectPersonen(this)">
+      <span class="text-gray-500">
+        👥
+      </span>
+      <!-- 2 Person Icon -->
+      <div class="ml-2">
+        <h3 class="font-bold">
+          2 bis 3 Personen
+        </h3>
+      </div>
+    </div>
+    <div class="flex items-center p-4 border rounded-lg border-gray-300 bg-white shadow-sm cursor-pointer"
+    onclick="selectPersonen(this)">
+      <span class="text-gray-500">
+        👨‍👩‍👧‍👦
+      </span>
+      <!-- 4 Person Icon -->
+      <div class="ml-2">
+        <h3 class="font-bold">
+          4 oder mehr Personen
+        </h3>
+      </div>
+    </div>
+  </div>
+</div>
+<h1 class="text-3xl font-bold mb-6 text-center bg-gray-500 rounded text-gray-200 p-5 mt-5">
+  📍 Ladestellen
+</h1>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js">
+</script>
+<div class="container mx-auto">
+  <div class="grid grid-cols-2 gap-4">
+    <!-- First Column -->
+    <div class="bg-white p-4 rounded shadow">
+      <h2 class="font-semibold">
+        Alte Adresse
+      </h2>
+      <div class="mb-4">
+        <input type="file" class="border rounded p-2 w-full" />
+      </div>
+      <div class="mb-4">
+        <label class="block">
+          Strecke LKW zur Eingangstür
+        </label>
+        <select class="border rounded p-2 w-full" title="Hierbei handelt es sich um die Strecke vom Parkplatz des Lkw bis zu Ihrer Eingangstür, die Ihr Umzugsgut getragen werden muss.">
+          <option value="5">
+            5 m
+          </option>
+          <option value="10">
+            10 m
+          </option>
+          <option value="15">
+            15 m
+          </option>
+          <option value="20">
+            20 m
+          </option>
+          <option value="25">
+            25 m
+          </option>
+          <option value="30">
+            30 m
+          </option>
+          <option value="35">
+            35 m
+          </option>
+          <option value="40">
+            40 m
+          </option>
+          <option value="45">
+            45 m
+          </option>
+          <option value="50">
+            50 m
+          </option>
+          <option value="55">
+            55 m
+          </option>
+          <option value="60">
+            60 m
+          </option>
+          <option value="65">
+            65 m
+          </option>
+          <option value="70">
+            70 m
+          </option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label class="block">
+          Stufen auf dieser Strecke
+        </label>
+        <div>
+          <input type="radio" name="stufen" value="ja" id="stufenJa" />
+          <label for="stufenJa">
+            Ja
+          </label>
+          <input type="radio" name="stufen" value="nein" id="stufenNein" />
+          <label for="stufenNein">
+            Nein
+          </label>
+        </div>
+      </div>
+      <div class="mb-4">
+        <label class="block">
+          Stockwerk
+        </label>
+        <select class="border rounded p-2 w-full">
+          <option value="Erdgeschoss">
+            Erdgeschoss
+          </option>
+          <option value="1.Etage">
+            1.Etage
+          </option>
+          <option value="2.Etage">
+            2.Etage
+          </option>
+          <option value="3.Etage">
+            3.Etage
+          </option>
+          <option value="4.Etage">
+            4.Etage
+          </option>
+          <option value="5.Etage">
+            5.Etage
+          </option>
+          <option value="6.Etage">
+            6.Etage
+          </option>
+          <option value="7.Etage">
+            7.Etage
+          </option>
+          <option value="8.Etage">
+            8.Etage
+          </option>
+          <option value="9.Etage">
+            9.Etage
+          </option>
+          <option value="10.Etage">
+            10.Etage
+          </option>
+          <option value="11.Etage">
+            11.Etage
+          </option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label class="block">
+          Aufzug
+        </label>
+        <select class="border rounded p-2 w-full" title="Der Aufzug muss für Ihren Umzug am Umzugstag uneingeschränkt nutzbar sein.">
+          <option value="Kein Aufzug">
+            Kein Aufzug
+          </option>
+          <option value="kleiner Aufzug">
+            kleiner Aufzug (bis 8 Personen)
+          </option>
+          <option value="großer Aufzug">
+            großer Aufzug (ab 8 Personen)
+          </option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label class="block">
+          Parkplatz für LKW
+        </label>
+        <div>
+          <input type="radio" name="parkplatz" value="ja" id="parkplatzJa" />
+          <label for="parkplatzJa">
+            Ja
+          </label>
+          <input type="radio" name="parkplatz" value="nein" id="parkplatzNein" />
+          <label for="parkplatzNein">
+            Nein
+          </label>
+        </div>
+      </div>
+      <div class="mb-4">
+        <label class="block">
+          Keller oder Dachboden
+        </label>
+        <div>
+          <input type="radio" name="keller" value="ja" id="kellerJa" />
+          <label for="kellerJa">
+            Ja
+          </label>
+          <input type="radio" name="keller" value="nein" id="kellerNein" />
+          <label for="kellerNein">
+            Nein
+          </label>
+        </div>
+      </div>
+      <div class="mb-4">
+        <label class="block">
+          Besonderheiten
+        </label>
+        <select multiple class="border rounded p-2 w-full" title="Bitte wählen Sie diesen Punkt, wenn die Strecke vom Parkplatz des Lkw zur Haustür eine erhebliche Steigung oder mehr als 7 Stufen aufweist.">
+          <option value="Hanglage">
+            Hanglage
+          </option>
+          <option value="Enge Wege">
+            Enge Wege
+          </option>
+          <option value="Unbefestigte Wege">
+            Unbefestigte Wege
+          </option>
+        </select>
+      </div>
+    </div>
+    <!-- Second Column (Duplicate of First Column) -->
+    <div class="bg-white p-4 rounded shadow">
+      <h2 class="font-semibold">
+        Neue Adresse
+      </h2>
+      <div class="mb-4">
+        <input type="file" class="border rounded p-2 w-full" />
+      </div>
+      <div class="mb-4">
+        <label class="block">
+          Strecke LKW zur Eingangstür
+        </label>
+        <select class="border rounded p-2 w-full" title="Hierbei handelt es sich um die Strecke vom Parkplatz des Lkw bis zu Ihrer Eingangstür, die Ihr Umzugsgut getragen werden muss.">
+          <option value="5">
+            5 m
+          </option>
+          <option value="10">
+            10 m
+          </option>
+          <option value="15">
+            15 m
+          </option>
+          <option value="20">
+            20 m
+          </option>
+          <option value="25">
+            25 m
+          </option>
+          <option value="30">
+            30 m
+          </option>
+          <option value="35">
+            35 m
+          </option>
+          <option value="40">
+            40 m
+          </option>
+          <option value="45">
+            45 m
+          </option>
+          <option value="50">
+            50 m
+          </option>
+          <option value="55">
+            55 m
+          </option>
+          <option value="60">
+            60 m
+          </option>
+          <option value="65">
+            65 m
+          </option>
+          <option value="70">
+            70 m
+          </option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label class="block">
+          Stufen auf dieser Strecke
+        </label>
+        <div>
+          <input type="radio" name="stufenNeu" value="ja" id="stufenJaNeu" />
+          <label for="stufenJaNeu">
+            Ja
+          </label>
+          <input type="radio" name="stufenNeu" value="nein" id="stufenNeinNeu" />
+          <label for="stufenNeinNeu">
+            Nein
+          </label>
+        </div>
+      </div>
+      <div class="mb-4">
+        <label class="block">
+          Stockwerk
+        </label>
+        <select class="border rounded p-2 w-full">
+          <option value="Erdgeschoss">
+            Erdgeschoss
+          </option>
+          <option value="1.Etage">
+            1.Etage
+          </option>
+          <option value="2.Etage">
+            2.Etage
+          </option>
+          <option value="3.Etage">
+            3.Etage
+          </option>
+          <option value="4.Etage">
+            4.Etage
+          </option>
+          <option value="5.Etage">
+            5.Etage
+          </option>
+          <option value="6.Etage">
+            6.Etage
+          </option>
+          <option value="7.Etage">
+            7.Etage
+          </option>
+          <option value="8.Etage">
+            8.Etage
+          </option>
+          <option value="9.Etage">
+            9.Etage
+          </option>
+          <option value="10.Etage">
+            10.Etage
+          </option>
+          <option value="11.Etage">
+            11.Etage
+          </option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label class="block">
+          Aufzug
+        </label>
+        <select class="border rounded p-2 w-full" title="Der Aufzug muss für Ihren Umzug am Umzugstag uneingeschränkt nutzbar sein.">
+          <option value="Kein Aufzug">
+            Kein Aufzug
+          </option>
+          <option value="kleiner Aufzug">
+            kleiner Aufzug (bis 8 Personen)
+          </option>
+          <option value="großer Aufzug">
+            großer Aufzug (ab 8 Personen)
+          </option>
+        </select>
+      </div>
+      <div class="mb-4">
+        <label class="block">
+          Parkplatz für LKW
+        </label>
+        <div>
+          <input type="radio" name="parkplatzNeu" value="ja" id="parkplatzJaNeu"
+          />
+          <label for="parkplatzJaNeu">
+            Ja
+          </label>
+          <input type="radio" name="parkplatzNeu" value="nein" id="parkplatzNeinNeu"
+          />
+          <label for="parkplatzNeinNeu">
+            Nein
+          </label>
+        </div>
+      </div>
+      <div class="mb-4">
+        <label class="block">
+          Keller oder Dachboden
+        </label>
+        <div>
+          <input type="radio" name="kellerNeu" value="ja" id="kellerJaNeu" />
+          <label for="kellerJaNeu">
+            Ja
+          </label>
+          <input type="radio" name="kellerNeu" value="nein" id="kellerNeinNeu" />
+          <label for="kellerNeinNeu">
+            Nein
+          </label>
+        </div>
+      </div>
+      <div class="mb-4">
+        <label class="block">
+          Besonderheiten
+        </label>
+        <select multiple class="border rounded p-2 w-full" title="Bitte wählen Sie diesen Punkt, wenn die Strecke vom Parkplatz des Lkw zur Haustür eine erhebliche Steigung oder mehr als 7 Stufen aufweist.">
+          <option value="Hanglage">
+            Hanglage
+          </option>
+          <option value="Enge Wege">
+            Enge Wege
+          </option>
+          <option value="Unbefestigte Wege">
+            Unbefestigte Wege
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="bg-white p-4 rounded shadow mt-4 w-full">
+    <h2 class="font-semibold">
+      Müssen Möbel an einer weiteren Adresse abgeholt oder ausgeladen werden?
+    </h2>
+    <div>
+      <input type="radio" name="weitereAdresse" value="ja" id="weitereAdresseJa"
+      />
+      <label for="weitereAdresseJa">
+        Ja
+      </label>
+      <input type="radio" name="weitereAdresse" value="nein" id="weitereAdresseNein"
+      />
+      <label for="weitereAdresseNein">
+        Nein
+      </label>
+    </div>
+  </div>
+</div>

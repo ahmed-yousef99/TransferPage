@@ -1,0 +1,286 @@
+<h1 class="text-red-500 text-4xl">
+  Umzugsangebot in
+</h1>
+<h1 class="text-4xl">
+  Maximal 5 Schritten
+</h1>
+<form action="">
+  <label for="umzugsdatum" class="block text-sm font-medium text-gray-700 mb-2 mt-5">
+    Umzugsdatum
+  </label>
+  <div class="p-6 bg-white rounded-lg shadow-lg" style="width:100%">
+    <input type="date" id="umzugsdatum" class="datepicker block w-full border border-gray-300 rounded-md p-2 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50">
+  </div>
+  <h2 class="text-sm font-medium text-gray-700 mb-2 mt-5">
+    Alte Adresse
+  </h2>
+  <div class="w-full p-6 bg-white rounded-lg shadow-lg">
+    <div class="mb-4">
+      <div class="flex space-x-4 border-b">
+        <button id="tabfirst" class="tab-active border-b-2 pb-2 px-4 focus:outline-none"
+        onclick="showTab('tabfirst')">
+          <img src="https://cdn-icons-png.flaticon.com/512/263/263115.png" width="50">
+          Wohnung 1-2 Zimmer
+        </button>
+        <button id="tab2" class="border-b-2 pb-2 px-4 focus:outline-none" onclick="showTab('tab2')">
+          <img src="https://cdn-icons-png.flaticon.com/512/916/916771.png" width="50">
+          Wohnung 3 Zimmer und mehr
+        </button>
+        <button id="tab3" class="border-b-2 pb-2 px-4 focus:outline-none" onclick="showTab('tab3')">
+          <img src="https://cdn-icons-png.flaticon.com/512/618/618911.png" width="50">
+          Haus
+        </button>
+      </div>
+    </div>
+    <div id="tabContent" class="space-y-4">
+      <div class="address-fields" id="tabfirstContent">
+        <div class="mb-4">
+          <label for="strasse" class="block text-sm font-medium text-gray-700">
+            Straße Hausnummer
+          </label>
+          <input type="text" id="strasse" class="block w-full border border-gray-300 rounded-md p-2 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+          placeholder="z.B. Hauptstraße 5" required>
+        </div>
+        <div class="mb-4">
+          <label for="plz" class="block text-sm font-medium text-gray-700">
+            Postleitzahl
+          </label>
+          <input type="text" id="plz" class="block w-full border border-gray-300 rounded-md p-2 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+          placeholder="z.B. 12345" required>
+        </div>
+        <div class="mb-4">
+          <label for="ort" class="block text-sm font-medium text-gray-700">
+            Ort
+          </label>
+          <input type="text" id="ort" class="block w-full border border-gray-300 rounded-md p-2 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+          placeholder="z.B. Berlin" required>
+        </div>
+        <div class="mb-4">
+          <label for="country" class="block text-sm font-medium text-gray-700">
+            Land
+          </label>
+          <input type="text" id="country" class="block w-full border border-gray-300 rounded-md p-2 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+          placeholder="z.B. Deutschland" required>
+        </div>
+      </div>
+      <div class="address-fields hidden" id="tab2Content">
+        <div class="mb-4">
+          <label for="strasse2" class="block text-sm font-medium text-gray-700">
+            Straße Hausnummer
+          </label>
+          <input type="text" id="strasse2" class="block w-full border border-gray-300 rounded-md p-2 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+          placeholder="z.B. Nebenstraße 3" required>
+        </div>
+        <div class="mb-4">
+          <label for="plz2" class="block text-sm font-medium text-gray-700">
+            Postleitzahl
+          </label>
+          <input type="text" id="plz2" class="block w-full border border-gray-300 rounded-md p-2 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+          placeholder="z.B. 54321" required>
+        </div>
+        <div class="mb-4">
+          <label for="ort2" class="block text-sm font-medium text-gray-700">
+            Ort
+          </label>
+          <input type="text" id="ort2" class="block w-full border border-gray-300 rounded-md p-2 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+          placeholder="z.B. München" required>
+        </div>
+        <div class="mb-4">
+          <label for="country2" class="block text-sm font-medium text-gray-700">
+            Land
+          </label>
+          <input type="text" id="country2" class="block w-full border border-gray-300 rounded-md p-2 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+          placeholder="z.B. Deutschland" required>
+        </div>
+      </div>
+      <div class="address-fields hidden" id="tab3Content">
+        <div class="mb-4">
+          <label for="strasse3" class="block text-sm font-medium text-gray-700">
+            Straße Hausnummer
+          </label>
+          <input type="text" id="strasse3" class="block w-full border border-gray-300 rounded-md p-2 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+          placeholder="z.B. Gartenstraße 10" required>
+        </div>
+        <div class="mb-4">
+          <label for="plz3" class="block text-sm font-medium text-gray-700">
+            Postleitzahl
+          </label>
+          <input type="text" id="plz3" class="block w-full border border-gray-300 rounded-md p-2 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+          placeholder="z.B. 67890" required>
+        </div>
+        <div class="mb-4">
+          <label for="ort3" class="block text-sm font-medium text-gray-700">
+            Ort
+          </label>
+          <input type="text" id="ort3" class="block w-full border border-gray-300 rounded-md p-2 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+          placeholder="z.B. Köln" required>
+        </div>
+        <div class="mb-4">
+          <label for="country3" class="block text-sm font-medium text-gray-700">
+            Land
+          </label>
+          <input type="text" id="country3" class="block w-full border border-gray-300 rounded-md p-2 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+          placeholder="z.B. Deutschland" required>
+        </div>
+      </div>
+    </div>
+    <div class="mb-6">
+      <div class="w-full p-6 bg-white rounded-lg shadow-lg">
+        <label for="wohnflaeche" class="block text-sm font-medium text-gray-700">
+          Wohnfläche (m²)
+        </label>
+        <input type="range" id="wohnflaeche" min="0" max="200" value="100" class="w-full h-2 bg-blue-200 rounded-lg appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
+        oninput="updateValue(this.value)">
+        <div class="flex justify-between text-sm text-gray-600">
+          <span>
+            0 m²
+          </span>
+          <span>
+            200 m²
+          </span>
+        </div>
+        <div class="mt-4">
+          <span class="text-xl font-bold text-blue-600" id="displayValue">
+            100 m²
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <h2 class="text-sm font-medium text-gray-700 mb-2 mt-5">
+    Neue Adresse
+  </h2>
+  <div class="w-full p-6 bg-white rounded-lg shadow-lg">
+    <div class="mb-4">
+      <div class="flex space-x-4 border-b">
+        <button id="tab21" class="tab-active border-b-2 pb-2 px-4 focus:outline-none"
+        onclick="showTab2('tab21')">
+          <img src="https://cdn-icons-png.flaticon.com/512/263/263115.png" width="50">
+          Wohnung 1-2 Zimmer
+        </button>
+        <button id="tab22" class="border-b-2 pb-2 px-4 focus:outline-none" onclick="showTab2('tab22')">
+          <img src="https://cdn-icons-png.flaticon.com/512/916/916771.png" width="50">
+          Wohnung 3 Zimmer und mehr
+        </button>
+        <button id="tab23" class="border-b-2 pb-2 px-4 focus:outline-none" onclick="showTab2('tab23')">
+          <img src="https://cdn-icons-png.flaticon.com/512/618/618911.png" width="50">
+          Haus
+        </button>
+      </div>
+    </div>
+    <div id="tabContent2" class="space-y-4">
+      <div class="address-fields" id="tab21Content">
+        <div class="mb-4">
+          <label for="strasse" class="block text-sm font-medium text-gray-700">
+            Straße Hausnummer
+          </label>
+          <input type="text" id="strasse" class="block w-full border border-gray-300 rounded-md p-2 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+          placeholder="z.B. Hauptstraße 5" required>
+        </div>
+        <div class="mb-4">
+          <label for="plz" class="block text-sm font-medium text-gray-700">
+            Postleitzahl
+          </label>
+          <input type="text" id="plz" class="block w-full border border-gray-300 rounded-md p-2 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+          placeholder="z.B. 12345" required>
+        </div>
+        <div class="mb-4">
+          <label for="ort" class="block text-sm font-medium text-gray-700">
+            Ort
+          </label>
+          <input type="text" id="ort" class="block w-full border border-gray-300 rounded-md p-2 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+          placeholder="z.B. Berlin" required>
+        </div>
+        <div class="mb-4">
+          <label for="country" class="block text-sm font-medium text-gray-700">
+            Land
+          </label>
+          <input type="text" id="country" class="block w-full border border-gray-300 rounded-md p-2 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+          placeholder="z.B. Deutschland" required>
+        </div>
+      </div>
+      <div class="address-fields hidden" id="tab22Content">
+        <div class="mb-4">
+          <label for="strasse2" class="block text-sm font-medium text-gray-700">
+            Straße Hausnummer
+          </label>
+          <input type="text" id="strasse2" class="block w-full border border-gray-300 rounded-md p-2 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+          placeholder="z.B. Nebenstraße 3" required>
+        </div>
+        <div class="mb-4">
+          <label for="plz2" class="block text-sm font-medium text-gray-700">
+            Postleitzahl
+          </label>
+          <input type="text" id="plz2" class="block w-full border border-gray-300 rounded-md p-2 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+          placeholder="z.B. 54321" required>
+        </div>
+        <div class="mb-4">
+          <label for="ort2" class="block text-sm font-medium text-gray-700">
+            Ort
+          </label>
+          <input type="text" id="ort2" class="block w-full border border-gray-300 rounded-md p-2 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+          placeholder="z.B. München" required>
+        </div>
+        <div class="mb-4">
+          <label for="country2" class="block text-sm font-medium text-gray-700">
+            Land
+          </label>
+          <input type="text" id="country2" class="block w-full border border-gray-300 rounded-md p-2 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+          placeholder="z.B. Deutschland" required>
+        </div>
+      </div>
+      <div class="address-fields hidden" id="tab23Content">
+        <div class="mb-4">
+          <label for="strasse3" class="block text-sm font-medium text-gray-700">
+            Straße Hausnummer
+          </label>
+          <input type="text" id="strasse3" class="block w-full border border-gray-300 rounded-md p-2 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+          placeholder="z.B. Gartenstraße 10" required>
+        </div>
+        <div class="mb-4">
+          <label for="plz3" class="block text-sm font-medium text-gray-700">
+            Postleitzahl
+          </label>
+          <input type="text" id="plz3" class="block w-full border border-gray-300 rounded-md p-2 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+          placeholder="z.B. 67890" required>
+        </div>
+        <div class="mb-4">
+          <label for="ort3" class="block text-sm font-medium text-gray-700">
+            Ort
+          </label>
+          <input type="text" id="ort3" class="block w-full border border-gray-300 rounded-md p-2 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+          placeholder="z.B. Köln" required>
+        </div>
+        <div class="mb-4">
+          <label for="country3" class="block text-sm font-medium text-gray-700">
+            Land
+          </label>
+          <input type="text" id="country3" class="block w-full border border-gray-300 rounded-md p-2 focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50"
+          placeholder="z.B. Deutschland" required>
+        </div>
+      </div>
+    </div>
+    <div class="mb-6">
+      <div class="w-full p-6 bg-white rounded-lg shadow-lg">
+        <label for="wohnflaeche" class="block text-sm font-medium text-gray-700">
+          Wohnfläche (m²)
+        </label>
+        <input type="range" id="wohnflaeche" min="0" max="200" value="100" class="w-full h-2 bg-blue-200 rounded-lg appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
+        oninput="updateValue2(this.value)">
+        <div class="flex justify-between text-sm text-gray-600">
+          <span>
+            0 m²
+          </span>
+          <span>
+            200 m²
+          </span>
+        </div>
+        <div class="mt-4">
+          <span class="text-xl font-bold text-blue-600" id="displayValue2">
+            100 m²
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
